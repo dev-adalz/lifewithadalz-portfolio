@@ -9,12 +9,13 @@ Welcome to the source code for my personal portfolio! This site showcases my jou
 - **Social Links:** Quick access to all my platforms.  
 
 ## 🚀 Live Preview  
-Check it out live: [Adal's Portfolio](https://<your-username>.github.io/<repo-name>/)  
+Check it out live: [Adal's Portfolio](https://lifewithadalz.me)  
 
 ## 🛠️ How to Use  
 1. Clone this repository:  
    ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git```
+   git clone https://github.com/<dev-adalz>/<lifewithadalz-portfolio>.git
+
 2. Open index.html directly or host it using a local server.
 
 ## 📬 Get in Touch
