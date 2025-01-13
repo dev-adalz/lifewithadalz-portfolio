@@ -1,1 +1,0 @@
-# dev-adalz.github.io
