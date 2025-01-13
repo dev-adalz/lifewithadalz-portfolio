@@ -22,3 +22,4 @@ Check it out live: [Adal's Portfolio](https://lifewithadalz.me)
 Feel free to reach out via my portfolio or connect with me on my socials listed on the site!
 
 Made with ❤️ and Tailwind CSS.
+![image](https://github.com/user-attachments/assets/70b1965c-bc12-430f-b00b-e8855f7ec310)
