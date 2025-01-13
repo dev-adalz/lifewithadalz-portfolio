@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adalz's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+
+    <style>
+        @keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
+  }
+}
+@keyframes glow-blue {
+  0%, 100% {
+    box-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f;
+  }
+  50% {
+    box-shadow: 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f, 0 0 80px #00f;
+  }
+}
+
+.glow-blue-on-hover:hover {
+  animation: glow-blue 1s infinite alternate;
+}
+
+
+.glow-on-hover:hover {
+  animation: glow 1s infinite alternate;
+}
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .fade-up.aos-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scale-up {
+            transform: scale(0.95);
+            transition: all 0.3s ease-in-out;
+        }
+        .scale-up:hover {
+            transform: scale(1);
+        }
+        .hero-header {
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <style>
+    @layer utilities {
+      .glowing-border {
+        position: relative;
+        overflow: hidden;
+      }
+      .glowing-border:before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, rgba(255, 0, 150, 0.75), rgba(0, 204, 255, 0.75));
+        z-index: -1;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+      }
+      .glowing-border:hover:before {
+        opacity: 1;
+        filter: blur(15px);
+      }
+    }
+  </style>
+
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+ 
+
+    <div class="relative flex-1">
+
+        <!-- Navbar -->
+        <nav class="bg-gray-800 fixed w-full z-10">
+            <div class="container mx-auto flex justify-between items-center p-4">
+                <a href="./index.html" class="text-xl font-bold">LifeWithAdalz</a>
+                <div class="space-x-4">
+                    <a href="./index.html" class="hover:text-gray-400">Home</a>
+                    <a href="#about" class="hover:text-gray-400">About</a>
+                    <a href="#projects" class="hover:text-gray-400">Projects</a>
+                    <a href="#stack" class="hover:text-gray-400">Tech Stack</a>
+                    <a href="#contact" class="hover:text-gray-400">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <header class="flex flex-col justify-center items-center min-h-screen text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold font-jaro hero-header">Hi, I'm Adalz</h1>
+            <p class="mt-4 text-xl">
+                I'm a <span class='typing'></span>
+            </p>
+            <a href="#projects" class="mt-6 px-8 py-3 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-lg transition duration-300 transform hover:scale-105">View My Work</a>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="py-12 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 mb-6 md:mb-0 fade-up" data-aos="fade-up">
+                        <img src="/images/pfp.jpg" alt="About Me" class="w-full rounded-full shadow-lg">
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-12 fade-up" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+                        <p class="leading-relaxed">I am a blogger, a developer, and a guy who likes to put his faiths and discipline first. I like to study, code, and I'm currently studying in high school. I have experience in projects like web apps with RESTful APIs using Flask. I am an expert in Python and also proficient in CSS, JS, and HTML. I've worked with different API integration dashboards and more. I'm passionate about learning and creating as many projects as I can before switching to university. Coding gives me a sense of accomplishment, and I love coffee – it fuels me for coding all the time. I also enjoy praying, playing basketball, and researching web3 technologies and crypto investments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Tech Stack Section -->
+<section id="stack" class="py-12 bg-gray-800">
+    <div class="container mx-auto px-4">
+        <h2 class="text-center text-3xl font-bold mb-8 text-white">Tech Stack</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Tech Item 1 -->
+            <div class="tech-item bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500 glow-on-hover" data-aos="fade-up">
+                <div class="p-4 text-center">
+                    <i class="fab fa-python fa-3x mb-2 text-white"></i>
+                    <h5 class="text-xl font-semibold text-white">Python</h5>
+                </div>
+            </div>
+            <!-- Tech Item 2 -->
+            <div class="tech-item bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500 glow-on-hover" data-aos="fade-up" data-aos-delay="100">
+                <div class="p-4 text-center">
+                    <i class="fab fa-html5 fa-3x mb-2 text-white"></i>
+                    <h5 class="text-xl font-semibold text-white">HTML5</h5>
+                </div>
+            </div>
+            <!-- Tech Item 3 -->
+            <div class="tech-item bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500 glow-on-hover" data-aos="fade-up" data-aos-delay="200">
+                <div class="p-4 text-center">
+                    <i class="fab fa-css3-alt fa-3x mb-2 text-white"></i>
+                    <h5 class="text-xl font-semibold text-white">CSS3</h5>
+                </div>
+            </div>
+            <!-- Tech Item 4 -->
+            <div class="tech-item bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500 glow-on-hover" data-aos="fade-up" data-aos-delay="300">
+                <div class="p-4 text-center">
+                    <i class="fab fa-js fa-3x mb-2 text-white"></i>
+                    <h5 class="text-xl font-semibold text-white">JavaScript</h5>
+                </div>
+            </div>
+            <!-- Tech Item 5 -->
+            <div class="tech-item bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500 glow-on-hover" data-aos="fade-up" data-aos-delay="400">
+                <div class="p-4 text-center">
+                    <i class="fab fa-discord fa-3x mb-2 text-white"></i>
+                    <h5 class="text-xl font-semibold text-white">Discord.py</h5>
+                </div>
+            </div>
+            <!-- Tech Item 6 -->
+            <div class="tech-item bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500 glow-on-hover" data-aos="fade-up" data-aos-delay="500">
+                <div class="p-4 text-center">
+                    <i class="devicon-tailwindcss-original text-white" style="font-size: 320%;"></i>
+                    <h5 class="text-xl font-semibold text-white">Tailwind CSS</h5>
+                </div>
+            </div>
+            <!-- Tech Item 7 -->
+            <div class="tech-item bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500 glow-on-hover" data-aos="fade-up" data-aos-delay="600">
+                <div class="p-4 text-center">
+                    <i class="devicon-tensorflow-original text-white" style="font-size: 320%;"></i>
+                    <h5 class="text-xl font-semibold text-white">Tensorflow</h5>
+                </div>
+            </div>
+            <!-- Tech Item 8 -->
+            <div class="tech-item bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500 glow-on-hover" data-aos="fade-up" data-aos-delay="700">
+                <div class="p-4 text-center">
+                    <i class="devicon-flask-original text-white" style="font-size: 320%;"></i>
+                    <h5 class="text-xl font-semibold text-white">Flask</h5>
+                </div>
+            </div>
+            <!-- Tech Item 9 -->
+            <div class="tech-item bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-purple-400 hover:via-pink-500 hover:to-red-500 glow-on-hover" data-aos="fade-up" data-aos-delay="800">
+                <div class="p-4 text-center">
+                    <i class="fab fa-git fa-3x mb-2 text-white"></i>
+                    <h5 class="text-xl font-semibold text-white">Git</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<style>
+    .tech-item {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .tech-item::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, #ff6ec4, #7873f5);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: inherit;
+    }
+
+    .tech-item:hover::before {
+        opacity: 1;
+    }
+</style>
+
+
+        <!-- Projects Section -->
+<!-- Projects Section -->
+<section id="projects" class="py-12 bg-gray-800">
+    <div class="container mx-auto px-4">
+      <h2 class="text-center text-3xl font-bold mb-8 text-white">My Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project 1 -->
+        <div class="project-card bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-blue-400 hover:via-blue-500 hover:to-blue-600 glow-blue-on-hover" data-aos="fade-up">
+          <img src="https://via.placeholder.com/300" alt="URL Shrinker" class="rounded-t-lg w-full">
+          <div class="p-4">
+            <h5 class="text-xl font-semibold text-white">URL Shrinker</h5>
+            <p class="mt-2 text-gray-300">A web app that shrinks URLs using an API.</p>
+            <a href="https://github.com/dev-adalz/Url_Shrinker" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-lg transition duration-300">View on GitHub</a>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-blue-400 hover:via-blue-500 hover:to-blue-600 glow-blue-on-hover" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://via.placeholder.com/300" alt="Quotes Image Generator" class="rounded-t-lg w-full">
+          <div class="p-4">
+            <h5 class="text-xl font-semibold text-white">Quotes Image Generator</h5>
+            <p class="mt-2 text-gray-300">Generates postable images from quotes using an API and Python.</p>
+            <a href="https://github.com/dev-adalz/quotes-image-generator" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-lg transition duration-300">View on GitHub</a>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-card bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-blue-400 hover:via-blue-500 hover:to-blue-600 glow-blue-on-hover" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://via.placeholder.com/300" alt="C++ Learning Journey" class="rounded-t-lg w-full">
+          <div class="p-4">
+            <h5 class="text-xl font-semibold text-white">C++ Learning Journey</h5>
+            <p class="mt-2 text-gray-300">Documenting my learning journey in C++.</p>
+            <a href="https://github.com/dev-adalz/c" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-lg transition duration-300">View on GitHub</a>
+          </div>
+        </div>
+        <!-- Project 4 -->
+        <div class="project-card bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-blue-400 hover:via-blue-500 hover:to-blue-600 glow-blue-on-hover" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://via.placeholder.com/300" alt="YouTube View Bot" class="rounded-t-lg w-full">
+          <div class="p-4">
+            <h5 class="text-xl font-semibold text-white">YouTube View Bot</h5>
+            <p class="mt-2 text-gray-300">A Discord-based view bot for YouTube.</p>
+            <a href="https://github.com/dev-adalz/yt-viewbot" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-lg transition duration-300">View on GitHub</a>
+          </div>
+        </div>
+        <!-- Project 5 -->
+        <div class="project-card bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-blue-400 hover:via-blue-500 hover:to-blue-600 glow-blue-on-hover" data-aos="fade-up" data-aos-delay="400">
+          <img src="https://via.placeholder.com/300" alt="Zero One Discord Bot" class="rounded-t-lg w-full">
+          <div class="p-4">
+            <h5 class="text-xl font-semibold text-white">Zero One Discord Bot</h5>
+            <p class="mt-2 text-gray-300">A multi-utility Discord bot currently in development.</p>
+            <a href="https://github.com/dev-adalz/Zero-one discord bot" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-lg transition duration-300">View on GitHub</a>
+          </div>
+        </div>
+        <!-- Project 6 -->
+        <div class="project-card bg-gray-700 rounded-lg shadow-lg transition duration-300 hover:border-4 hover:border-transparent hover:border-gradient-to-r hover:from-blue-400 hover:via-blue-500 hover:to-blue-600 glow-blue-on-hover" data-aos="fade-up" data-aos-delay="500">
+          <img src="https://via.placeholder.com/300" alt="Hypebot123" class="rounded-t-lg w-full">
+          <div class="p-4">
+            <h5 class="text-xl font-semibold text-white">Hypebot123</h5>
+            <p class="mt-2 text-gray-300">An economic-based Discord bot.</p>
+            <a href="https://github.com/dev-adalz/hypebot123" target="_blank" class="mt-4 inline-block px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold rounded-lg transition duration-300">View on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+            <!-- Footer -->
+            <footer class="bg-gray-800 py-6 text-center">
+              <p class="text-gray-400">© 2024 LifeWithAdalz. All Rights Reserved.</p>
+              <div class="mt-4 space-x-4">
+                  <a href="https://github.com/dev-adalz" class="text-white hover:text-gray-400"><i class="fab fa-github fa-lg"></i></a>
+                  <a href="https://twitter.com/lifewadalz" class="text-white hover:text-gray-400"><i class="fab fa-twitter fa-lg"></i></a>
+                  <a href="https://linkedin.com/in/adal-bhuiyan-02811932b" class="text-white hover:text-gray-400"><i class="fab fa-linkedin fa-lg"></i></a>
+              </div>
+          </footer>
+      </div>
+
+    <script>
+       var typed = new Typed('.typing', {
+    strings: [
+        "Blogger",
+        "Developer",
+        "Faithful Person",
+        "Proficient in Python",
+        "Skilled in CSS, JS, and HTML",
+        "Reflective",
+        "Health-Conscious",
+        "Passionate Learner",
+        "Coffee Enthusiast",
+        "Basketball Player",
+        "Web3 Researcher"
+    ],
+    typeSpeed: 60,
+    backSpeed: 60,
+    loop: true
+});
+
+        
+        AOS.init({
+            duration: 1200, // Duration of the animation
+            easing: 'ease-in-out', // Easing function
+        });
+    </script>
+       </div>
+       <style>
+        
+       </style>
+</body>

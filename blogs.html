@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 Blog Dictionary - LifeWithAdalz</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+        }
+        @media (min-width: 769px) {
+            .mobile-menu {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mobile-nav');
+            nav.classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-gray-800 py-4 shadow-md">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">🌍 LifeWithAdalz</a>
+            <nav class="space-x-4 hidden md:block">
+                <a href="index.html" class="text-gray-400 hover:text-blue-400">Home 🏠</a>
+                <a href="#" class="text-blue-400">Blog 📚</a>
+                <a href="portfolio.html" class="text-gray-400 hover:text-blue-400">Portfolio 💻</a>
+                <a href="contact.html" class="text-gray-400 hover:text-blue-400">Contact 📩</a>
+            </nav>
+            <button class="mobile-menu md:hidden text-gray-400 hover:text-white" onclick="toggleMenu()">
+                ☰
+            </button>
+        </div>
+        <nav id="mobile-nav" class="hidden bg-gray-900 p-4">
+            <a href="index.html" class="block text-gray-400 hover:text-blue-400 py-1">Home 🏠</a>
+            <a href="#" class="block text-blue-400 py-1">Blog 📚</a>
+            <a href="portfolio.html" class="block text-gray-400 hover:text-blue-400 py-1">Portfolio 💻</a>
+            <a href="contact.html" class="block text-gray-400 hover:text-blue-400 py-1">Contact 📩</a>
+        </nav>
+    </header>
+
+    <!-- Blog Dictionary Section -->
+    <main class="container mx-auto px-4 py-10 flex-grow">
+        <h1 class="text-4xl font-bold mb-6 text-center">📚 Blog Dictionary</h1>
+        <p class="text-gray-300 text-center mb-8">Browse through my blogs and explore the topics that interest you!</p>
+
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Blog Entry -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <a href="/blogs/life&faithxp/0001.html">
+                    <h2 class="text-2xl font-semibold text-white mb-2">✨ My Journey From Darkness to Light 🌟</h2>
+                    <p class="text-gray-400">A Story of Personal Growth...</p>
+                </a>
+            </div>
+            <!-- Repeat Blog Entry -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <a href="/blogs/codingxp/0005.html">
+                    <h2 class="text-2xl font-semibold text-white mb-2">🚀 My Coding Journey</h2>
+                    <p class="text-gray-400">From Beginner to Building Projects.</p>
+                </a>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <a href="/blogs/life&faithxp/0002.html">
+                    <h2 class="text-2xl font-semibold text-white mb-2">Trusting Allah’s Plan ☝️</h2>
+                    <p class="text-gray-400">Letting Go and Letting Him Lead..</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-500">© 2025 LifeWithAdalz. All Rights Reserved.</p>
+            <p class="text-gray-500">Follow me on <a href="#" class="text-blue-400 hover:underline">Instagram</a>, <a href="#" class="text-blue-400 hover:underline">Twitter</a>, and <a href="#" class="text-blue-400 hover:underline">LinkedIn</a>.</p>
+        </div>
+    </footer>
+</body>
+</html>

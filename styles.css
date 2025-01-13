@@ -1,0 +1,497 @@
+/* styles.css */
+
+/* CSS Variables for Light and Dark Themes */
+/* CSS Variables for Light and Dark Themes */
+:root {
+    --background-light: linear-gradient(to right, #ff00f7, #b3009b);
+    --background-dark: linear-gradient(to right, #9300e9, #8200d8); /* Lightened Dark Mode Background */
+    /* Lightened Dark Mode Background */
+    --text-light: #333;
+    --text-dark: #f4f4f4;
+    --header-text-light: #ffffff;
+    --header-text-dark: #ffffff;
+    --primary-light: #6d5b98;
+    --primary-dark: #632077;
+    --box-shadow-light: rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: rgba(0, 0, 0, 0.3);
+    --link-hover-light: #ffd700;
+    --link-hover-dark: #ffbf00;
+}
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--background-light);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+body.dark-mode {
+    background: var(--background-dark);
+    /* Updated for lighter dark mode */
+    color: var(--text-dark);
+}
+
+header {
+    position: relative;
+    overflow: hidden;
+    color: var(--header-text-light);
+    padding: 2em 1.5em;
+    text-align: center;
+    box-shadow: 0 4px 6px var(--box-shadow-light);
+    background: var(--background-light);
+    transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+header.dark-mode {
+    background: ();
+    color: var(--header-text-dark);
+    box-shadow: 0 4px 6px var(--box-shadow-dark);
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/bg.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(3px);
+    z-index: 0;
+    opacity: 1;
+    /* Adjust opacity to your preference */
+}
+
+.header-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+header h1 {
+    margin: 0;
+    font-size: calc(1.5rem + 2vw);
+    /* Responsive font size */
+    animation: fadeInDown 1s;
+}
+
+header p {
+    margin: 0;
+    font-size: calc(0.8rem + 0.8vw);
+    /* Responsive font size */
+    animation: fadeInUp 1s;
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 1em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0.5em;
+}
+
+nav ul li a {
+    color: var(--header-text-light);
+    text-decoration: none;
+    font-size: calc(0.9rem + 0.5vw);
+    /* Responsive font size */
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--link-hover-light);
+    transform: scale(1.1);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: var(--background-dark);
+    color: var(--text-dark);
+}
+
+header.dark-mode {
+    background: var(--background-dark);
+    color: var(--header-text-dark);
+    box-shadow: 0 4px 6px var(--box-shadow-dark);
+}
+
+nav ul li a.dark-mode {
+    color: var(--header-text-dark);
+}
+
+nav ul li a.dark-mode:hover {
+    color: var(--link-hover-dark);
+}
+
+/* Responsive Styles for Header */
+@media (max-width: 768px) {
+    header {
+        padding: 1em;
+    }
+
+    header h1 {
+        font-size: calc(1.2rem + 3vw);
+        /* Adjust for smaller screens */
+    }
+
+    header p {
+        font-size: calc(0.9rem + 1vw);
+        /* Adjust for smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: calc(1rem + 4vw);
+        /* Further adjustment for very small screens */
+    }
+
+    header p {
+        font-size: calc(0.8rem + 1.5vw);
+        /* Further adjustment for very small screens */
+    }
+
+    nav ul li a {
+        font-size: calc(0.8rem + 1vw);
+        /* Further adjustment for very small screens */
+    }
+}
+
+/* Section Styles */
+#intro,
+#featured-content,
+#about,
+#faith,
+#contact {
+    padding: 2em 1em;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    /* Glassy effect */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--box-shadow-light);
+    transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+}
+
+#intro.dark-mode,
+#featured-content.dark-mode,
+#about.dark-mode,
+#faith.dark-mode,
+#contact.dark-mode {
+    background: rgba(0, 0, 0, 0.9);
+    /* Dark mode glassy effect */
+    box-shadow: 0 4px 8px var(--box-shadow-dark);
+}
+
+#intro:hover,
+#featured-content:hover,
+#about:hover,
+#faith:hover,
+#contact:hover {
+    box-shadow: 0 8px 16px var(--box-shadow-light);
+    transform: translateY(-5px);
+}
+
+#intro img,
+#featured-content img,
+.post img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1em;
+    box-shadow: 0 4px 6px var(--box-shadow-light);
+    animation: fadeIn 1s;
+}
+
+#intro .intro-text h2,
+#featured-content h2,
+#about h2,
+#faith h2,
+#contact h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+#intro .intro-text p,
+#featured-content p,
+#about p,
+#faith p,
+#contact p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+#featured-content .post {
+    margin-bottom: 1.5em;
+    padding: 1em;
+    background: rgba(255, 255, 255, 0.9);
+    /* Glassy effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--box-shadow-light);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+#featured-content.dark-mode .post {
+    background: rgba(0, 0, 0, 0.9);
+    /* Dark mode glassy effect */
+    box-shadow: 0 4px 6px var(--box-shadow-dark);
+}
+
+#featured-content .post:hover {
+    box-shadow: 0 8px 16px var(--box-shadow-light);
+    transform: translateY(-5px);
+}
+
+#featured-content .post img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 0.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--box-shadow-light);
+    transition: transform 0.3s;
+}
+
+#featured-content .post img:hover {
+    transform: scale(1.05);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    /* Glassy effect */
+    border-radius: 10px;
+    padding: 2em;
+    box-shadow: 0 4px 8px var(--box-shadow-light);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+form.dark-mode {
+    background: rgba(0, 0, 0, 0.9);
+    /* Dark mode glassy effect */
+    box-shadow: 0 4px 8px var(--box-shadow-dark);
+}
+
+form label {
+    margin-top: 1em;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    border: 1px solid #bdc3c7;
+    border-radius: 8px;
+    font-size: 1em;
+    background: rgba(255, 255, 255, 0.7);
+    /* Glassy effect */
+    transition: background 0.3s, border-color 0.3s;
+}
+
+form.dark-mode input,
+form.dark-mode textarea {
+    background: rgba(0, 0, 0, 0.7);
+    /* Dark mode glassy effect */
+    border-color: #444;
+}
+
+form button {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    background-color: var(--primary-light);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+form.dark-mode button {
+    background-color: var(--primary-dark);
+}
+
+form button:hover {
+    background-color: #574083;
+}
+
+footer {
+    background-color: var(--primary-light);
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+footer.dark-mode {
+    background-color: var(--primary-dark);
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Toggle Switch Styles */
+.theme-switch {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+.theme-switch label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.theme-switch input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.theme-switch .slider {
+    width: 60px;
+    height: 34px;
+    background: linear-gradient(135deg, #6d5b98, #4a4a4a); /* Gradient background */
+    border-radius: 34px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.theme-switch .slider i {
+    color: #ffffff;
+    font-size: 20px;
+    transition: opacity 0.3s;
+}
+
+.theme-switch input[type="checkbox"]:checked + .slider {
+    background: linear-gradient(135deg, #4a4a4a, #6d5b98); /* Gradient for checked state */
+}
+
+.theme-switch input[type="checkbox"]:checked + .slider i.fas.fa-sun {
+    opacity: 0;
+}
+
+.theme-switch input[type="checkbox"]:checked + .slider i.fas.fa-moon {
+    opacity: 1;
+}
+
+.theme-switch .slider i.fas.fa-sun {
+    opacity: 1;
+}
+
+.theme-switch .slider i.fas.fa-moon {
+    opacity: 0;
+}
+
+/* Hover and Active States */
+.theme-switch .slider:hover {
+    background: linear-gradient(135deg, #5a4a8b, #5a5a5a); /* Darker gradient on hover */
+}
+
+.theme-switch .slider:active::before {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Smaller shadow on active state */
+}
+
+/* Intro Section Styles */
+#intro {
+    padding: 2em 1em;
+    text-align: center;
+    background: linear-gradient(135deg, #600c97, #9b3dce);
+    /* Gradient background with #600c97 and a complementary color */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px var(--box-shadow-light);
+    transition: box-shadow 0.3s, transform 0.3s, background 0.3s;
+    color: #ffffff
+}
+
+#intro.dark-mode {
+    background: linear-gradient(135deg, #5b0a7f, #8b3d8c);
+    /* Dark mode gradient with darker shades */
+}
+
+#intro img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1em;
+    box-shadow: 0 4px 6px var(--box-shadow-light);
+    animation: fadeIn 1s;
+}
+
+#intro .intro-text h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+#intro .intro-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}

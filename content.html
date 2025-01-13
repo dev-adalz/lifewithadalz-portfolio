@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life with Adalz | Inspiring Growth & Community</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(145deg, #1e1e2f, #151522);
+            color: #e0e0e0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .animated {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-gray-800 py-4 shadow-md sticky top-0 z-10 glass">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">🌍 Life with Adalz</a>
+            <nav class="space-x-4 hidden md:block">
+                <a href="/index.html" class="text-gray-400 hover:text-blue-400">Home</a>
+                <a href="#about" class="text-gray-400 hover:text-blue-400">About</a>
+                <a href="#communities" class="text-gray-400 hover:text-blue-400">Communities</a>
+                <a href="#projects" class="text-gray-400 hover:text-blue-400">Projects</a>
+                <a href="#goals" class="text-gray-400 hover:text-blue-400">Goals</a>
+                <a href="#contact" class="text-gray-400 hover:text-blue-400">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative text-center py-20">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 opacity-20"></div>
+        <div class="relative z-10 container mx-auto px-4">
+            <h1 class="text-5xl font-extrabold text-white mb-4 animated">Welcome to Life with Adalz</h1>
+            <p class="text-gray-300 text-lg leading-relaxed animated">Where faith, growth, and inspiration converge. Join me on a journey of personal and community transformation.</p>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="container mx-auto px-4 py-10">
+        <div class="glass p-8 animated">
+            <h2 class="text-4xl font-bold mb-6 text-center">About Me</h2>
+            <p class="text-gray-300 mb-4 text-lg leading-relaxed">I am Adal, a motivational content creator driven by faith, discipline, and personal growth. My mission is to inspire others through thought-provoking reels, productivity hacks, and reflections on deen and lifestyle.</p>
+            <p class="text-gray-300 mb-4 text-lg leading-relaxed">With aspirations to study in the UK, I combine academic excellence with impactful community building to create a positive global footprint.</p>
+        </div>
+    </section>
+
+    <!-- Communities Section -->
+    <section id="communities" class="bg-gray-900 py-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-6 text-center text-white">Communities Built</h2>
+            <div class="space-y-4">
+                <div class="glass p-6">
+                    <h3 class="text-xl font-semibold text-blue-400">Khulshi Coast Cyclists</h3>
+                    <p class="text-gray-300">Co-founder of a vibrant cycling community promoting fitness, brotherhood, and healthy living.</p>
+                </div>
+                <div class="glass p-6">
+                    <h3 class="text-xl font-semibold text-blue-400">The Coding Ninjas</h3>
+                    <p class="text-gray-300">Founder of a thriving coding community where enthusiasts collaborate, learn, and build innovative projects.</p>
+                </div>
+                <div class="glass p-6">
+                    <h3 class="text-xl font-semibold text-blue-400">Muslim Brotherhood Community</h3>
+                    <p class="text-gray-300">Creator of a supportive Discord server focused on spiritual growth, self-improvement, and meaningful connections among Muslim youth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container mx-auto px-4 py-10">
+        <div class="glass p-8 animated">
+            <h2 class="text-3xl font-bold mb-6 text-center">Projects & Achievements</h2>
+            <ul class="text-gray-300 space-y-4">
+                <li><strong>Viral Content Creation:</strong> Crafted motivational reels, including the globally resonant "Power of Tahajjud" reel.</li>
+                <li><strong>Future Productivity Platform:</strong> Envisioning a Web3-integrated platform combining productivity tools and a developer marketplace.</li>
+                <li><strong>UK Study Resource:</strong> Developing a platform for students pursuing education in the UK with resources on scholarships and applications.</li>
+                <li><strong>Social Media Mastery:</strong> Successfully grew engagement through creative strategies, expanding global reach.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" class="bg-gray-900 py-10">
+        <div class="container mx-auto px-4">
+            <div class="glass p-8 animated">
+                <h2 class="text-3xl font-bold mb-6 text-center">Future Goals</h2>
+                <ul class="text-gray-300 space-y-4">
+                    <li><strong>Global Expansion:</strong> Collaborate with international creators to amplify motivational and Islamic content globally.</li>
+                    <li><strong>Tech-Driven Innovation:</strong> Launch platforms inspiring growth through cutting-edge technologies.</li>
+                    <li><strong>Empowering the Next Generation:</strong> Mentor and inspire others by bridging faith, productivity, and modern challenges.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container mx-auto px-4 py-10">
+        <div class="glass p-8 animated">
+            <h2 class="text-3xl font-bold mb-6 text-center">Contact</h2>
+            <p class="text-gray-300 text-center mb-4 text-lg">Let’s connect and collaborate! I’d love to hear from you.</p>
+            <div class="text-center">
+            <p class="text-gray-400">Email: <a href="mailto:adalzuhair.info@gmail.com" class="text-blue-400 hover:underline">adalzuhair.info@gmai.com</a></p>
+            <p class="text-gray-400">Instagram: <a href="https://www.instagram.com/lifewithadalz" class="text-blue-400 hover:underline">@lifewithadalz</a></p>
+            <p class="text-gray-400">Twitter: <a href="https://www.x.com/lifewadalz" class="text-blue-400 hover:underline">@lifewadalz</a></p>
+            <p class="text-gray-400">LinkedIn: <a href="https://linkedin.com/in/adal-bhuiyan-02811932b" class="text-blue-400 hover:underline">Adal Bhuiyan</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-500">© 2025 Life with Adalz. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

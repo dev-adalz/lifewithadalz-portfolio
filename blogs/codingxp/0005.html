@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring My Faith Journey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .container {
+            background: rgba(33, 33, 33, 0.7);
+            color: #e0e0e0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(12px);
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+            margin-top: 80px; /* Adjusted margin to account for header height */
+        }
+
+        h1, h2 {
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .theme-switch {
+            position: fixed;
+            top: 1em;
+            right: 1em;
+            z-index: 1000;
+        }
+
+        .theme-switch label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .theme-switch input[type="checkbox"] {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .theme-switch .slider {
+            width: 80px;
+            height: 40px;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            border-radius: 40px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            transition: background-color 0.3s;
+        }
+
+        .theme-switch .slider svg {
+            width: 24px;
+            height: 24px;
+            fill: #ffffff;
+            transition: opacity 0.3s;
+        }
+
+        .theme-switch input[type="checkbox"]:checked + .slider {
+            background: linear-gradient(135deg, #4a4a4a, #6d5b98);
+        }
+
+        .theme-switch input[type="checkbox"]:checked + .slider .icon-sun {
+            opacity: 0;
+        }
+
+        .theme-switch input[type="checkbox"]:checked + .slider .icon-moon {
+            opacity: 1;
+        }
+
+        .theme-switch .slider .icon-sun {
+            opacity: 1;
+        }
+
+        .theme-switch .slider .icon-moon {
+            opacity: 0;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        nav a {
+            color: #fff;
+            margin-right: 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            color: #ffffff;
+            text-align: center;
+            border-top: 1px solid #ccc;
+            text-decoration: none;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #ffffff;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .dark-mode footer {
+            background: rgba(33, 33, 33, 0.5);
+            border-top: 1px solid #444;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin-top: 60px; /* Adjusted margin for smaller screens */
+            }
+
+            .theme-switch {
+                top: 0.5em;
+                right: 0.5em;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+
+        .thumbnail {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-mode .thumbnail {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <header>
+        <a href="/index.html">
+            <h1>LifeWithAdalz</h1>
+        </a>
+        <nav>
+            <a href="/index.html">Home</a>
+            <a href="/blogs.html">Blogs</a>
+            <a href="/index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <h1>My Coding Journey: From Beginner to Building Projects</h1>
+        <img src="https://media.discordapp.net/attachments/1317853067013521431/1328315064754769984/Screenshot_2025-01-13-16-49-05-590_com.miui.gallery-edit.jpg?ex=6786414e&is=6784efce&hm=f96e6348768b9c9250475471772dc654e0caf5c466dcdec1507fc9b98eb340a4&=&format=webp&width=550&height=315" alt="Coding Journey Thumbnail" class="thumbnail">
+        
+        <p><strong>Introduction: The Start of My Coding Adventure</strong></p>
+        <p>Coding wasn't always a part of my life. It wasn’t until my teenage years, around 14 or 15, that I stumbled upon the world of programming during the pandemic. At the time, I was looking for something to dive into, and coding felt like a fascinating challenge. Little did I know, it would turn into a passion that would shape the rest of my life.</p>
+    
+        <p><strong>The Early Struggles: A Self-Taught Journey</strong></p>
+        <p>Like many beginners, my first steps into coding were full of confusion. I didn’t have any formal training, and I was just trying to make sense of the logic behind code. I started with simple languages like HTML and CSS to understand the basics of building websites, and quickly moved to JavaScript and Python to get into more complex programming.</p>
+    
+        <p>I spent hours watching tutorials, reading documentation, and experimenting with code. However, there were plenty of moments when things didn’t work as I expected, and it felt like I was hitting a wall. But each problem I faced became an opportunity to learn, and slowly, I started to get the hang of it.</p>
+    
+        <p><strong>Key Moments and Milestones</strong></p>
+        <ul>
+            <li><strong>First Successful Website</strong>: My first simple website, built with HTML, CSS, and a bit of JavaScript, was an exciting milestone. It wasn’t much, but it felt like magic seeing it come to life.</li>
+            <li><strong>Exploring Algorithms and Data Structures</strong>: As I progressed, I started diving into more complex topics like algorithms, data structures, and programming paradigms. It was both challenging and rewarding, as it taught me how to think logically and solve problems efficiently.</li>
+            <li><strong>Building Real-World Projects</strong>: One of my favorite projects was a personal portfolio, built with HTML, CSS, and JavaScript, and a task manager app using JavaScript and Firebase.</li>
+        </ul>
+    
+        <p><strong>Overcoming Challenges: From Self-Doubt to Confidence</strong></p>
+        <p>As with any journey, my path in coding was not without its challenges. There were moments when I felt frustrated, especially when I couldn't solve a problem or when my projects weren’t turning out the way I envisioned them. But over time, I learned the value of persistence and patience.</p>
+    
+        <p><strong>The Power of Collaboration: Building with Others</strong></p>
+        <p>One of the most enriching aspects of my coding journey has been collaborating with others. I’ve had the opportunity to work on projects with fellow coders, including team projects in my community like The Coding Ninjas. Collaboration has been essential for my growth as a coder.</p>
+    
+        <p><strong>Looking Ahead: My Goals and Future Projects</strong></p>
+        <ul>
+            <li><strong>Mastering New Technologies</strong>: I’m diving deeper into AI, Machine Learning, and Web3.</li>
+            <li><strong>Building More Complex Projects</strong>: I’m working on larger-scale projects like an e-commerce website and a personal finance tracking system.</li>
+            <li><strong>Contributing More to Open-Source</strong>: I plan to contribute to more open-source projects, which will help me learn and give back to the community.</li>
+        </ul>
+    
+        <p><strong>Conclusion: Keep Pushing Forward</strong></p>
+        <p>Looking back at my journey, it’s incredible to see how far I’ve come. From a beginner with no experience to building projects and collaborating with other developers, coding has been a journey of constant growth and learning. And while I’ve come a long way, I know there’s still so much more to learn and achieve.</p>
+        <p>To anyone starting their own coding journey: don’t get discouraged by the obstacles. Keep pushing forward, even when it gets tough, and always remember that growth comes with time and effort. The coding community is full of support and opportunities, so never hesitate to reach out and collaborate with others. Let’s keep building, coding, and growing together!</p>
+    </div>
+    
+    
+
+    <footer>
+        <div class="container">
+            <p>Follow me on: 
+                <a href="https://www.instagram.com/not_adalz" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram"></i></a>
+                <a href="https://twitter.com/lifewadalz" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/adal-bhuiyan-02811932b" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a>
+            </p>
+            <p>
+                <a href="/privacy-policy.html">Privacy Policy</a> | 
+                <a href="/tos.html">Terms of Service</a>
+            </p>
+            <p>© 2024 LifeWithAdalz. All rights reserved.</p>
+        </div>
+    </footer>
+
+   
+</body>
+</html>
